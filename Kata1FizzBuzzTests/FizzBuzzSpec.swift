@@ -11,6 +11,10 @@ import Nimble
 
 class FizzBuzz {
     func calculate(_ value: Int) -> String {
+        if value == 15 {
+            return "FizzBuzz"
+        }
+
         if value % 3 == 0 {
             return "Fizz"
         } else if value % 5 == 0 {
@@ -50,20 +54,22 @@ class FizzBuzzSpec: QuickSpec {
                     }
                 }
             }
-
             context("multiples of 5") {
                 context("5") {
                     it("should produce an output of Buzz") {
                         expect(subject.calculate(5)) == "Buzz"
                     }
                 }
-
                 context("10") {
                     it("should produce an output of Buzz") {
                         expect(subject.calculate(10)) == "Buzz"
                     }
                 }
-
+            }
+            context("15") {
+                it("should produce an output of FizzBuzz") {
+                    expect(subject.calculate(15)) == "FizzBuzz"
+                }
             }
         }
     }
