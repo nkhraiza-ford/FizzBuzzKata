@@ -9,23 +9,12 @@
 import Quick
 import Nimble
 
-class FizzBuzz {
-    let number: Int = 1
-}
-
 class FizzBuzzSpec: QuickSpec {
     override func spec() {
         describe("Fizz Buzz") {
             // arrange
-            let subject = FizzBuzz()
-
-            context("the number is one") {
-                it("should print 1") {
-                    // act
-                    // assert
-                    expect(subject.number) == 1
-                }
-            }
+            // act
+            // assert
         }
     }
 }
