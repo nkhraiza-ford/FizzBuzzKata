@@ -10,22 +10,26 @@ import Quick
 import Nimble
 
 class FizzBuzz {
-   static func calculate(_ value: Int) -> Int {
+   func calculate(_ value: Int) -> Int {
         return value
     }
 }
 
 class FizzBuzzSpec: QuickSpec {
     override func spec() {
+        var subject: FizzBuzz!
         describe("Fizz Buzz") {
+            beforeEach {
+                subject = FizzBuzz()
+            }
             context("1") {
-                it("produces output of 1"){
-                    expect(FizzBuzz.calculate(1)) == 1
+                it("should produces output of 1") {
+                    expect(subject.calculate(1)) == 1
                 }
             }
             context("2") {
                 it("should produce an output of 2") {
-                    expect(FizzBuzz.calculate(2)) == 2
+                    expect(subject.calculate(2)) == 2
                 }
             }
         }
