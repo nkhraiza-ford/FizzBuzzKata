@@ -190,7 +190,6 @@
 					};
 					8E7B022F23609160002B5B93 = {
 						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 8E7B021B2360915F002B5B93;
 					};
 				};
 			};
@@ -505,7 +504,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22C1A4192AEABB9D7588BB25 /* Pods-Kata1FizzBuzzTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAYMDXGMJ7;
 				INFOPLIST_FILE = Kata1FizzBuzzTests/Info.plist;
@@ -518,7 +516,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kata1FizzBuzz.app/Kata1FizzBuzz";
 			};
 			name = Debug;
 		};
@@ -526,7 +523,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E670696E467A53DB671536E /* Pods-Kata1FizzBuzzTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAYMDXGMJ7;
 				INFOPLIST_FILE = Kata1FizzBuzzTests/Info.plist;
@@ -539,7 +535,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kata1FizzBuzz.app/Kata1FizzBuzz";
 			};
 			name = Release;
 		};
