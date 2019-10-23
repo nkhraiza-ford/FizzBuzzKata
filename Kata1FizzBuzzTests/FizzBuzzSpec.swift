@@ -10,8 +10,10 @@ import Quick
 import Nimble
 
 class FizzBuzz {
-   func calculate(_ value: Int) -> String {
-    if (value == 3) {return "Fizz"}
+    func calculate(_ value: Int) -> String {
+        if value == 3 {
+            return "Fizz"
+        }
         return String(value)
     }
 }
