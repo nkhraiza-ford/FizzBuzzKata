@@ -11,15 +11,20 @@ import Nimble
 
 class FizzBuzz {
     func calculate(_ value: Int) -> String {
+
         if value % 15 == 0 {
             return "FizzBuzz"
-        } else if value % 3 == 0 {
+        } else if isDivisibleByThree(value: value) {
             return "Fizz"
         } else if value % 5 == 0 {
             return "Buzz"
         } else {
             return String(value)
         }
+    }
+
+    func isDivisibleByThree(value: Int ) -> Bool {
+        return (value % 3 == 0)
     }
 }
 
