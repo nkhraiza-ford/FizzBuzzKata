@@ -13,7 +13,7 @@ class FizzBuzz {
     func calculate(_ value: Int) -> String {
         if value % 3 == 0 {
             return "Fizz"
-        } else if value == 5 {
+        } else if value % 5 == 0 {
             return "Buzz"
         } else {
             return String(value)
@@ -50,10 +50,20 @@ class FizzBuzzSpec: QuickSpec {
                     }
                 }
             }
-            context("5") {
-                it("should produce an output of Buzz") {
-                    expect(subject.calculate(5)) == "Buzz"
+
+            context("multiples of 5") {
+                context("5") {
+                    it("should produce an output of Buzz") {
+                        expect(subject.calculate(5)) == "Buzz"
+                    }
                 }
+
+                context("10") {
+                    it("should produce an output of Buzz") {
+                        expect(subject.calculate(10)) == "Buzz"
+                    }
+                }
+
             }
         }
     }
