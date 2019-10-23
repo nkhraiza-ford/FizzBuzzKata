@@ -11,6 +11,7 @@ import Nimble
 
 class FizzBuzz {
    func calculate(_ value: Int) -> String {
+    if (value == 3) {return "Fizz"}
         return String(value)
     }
 }
@@ -32,11 +33,11 @@ class FizzBuzzSpec: QuickSpec {
                     expect(subject.calculate(2)) == "2"
                 }
             }
-//            context("3") {
-//                it("should produce an output of Fizz") {
-//                    expect(subject.calculate(3)) == "Fizz"
-//                }
-//            }
+            context("3") {
+                it("should produce an output of Fizz") {
+                    expect(subject.calculate(3)) == "Fizz"
+                }
+            }
         }
     }
 }
