@@ -11,14 +11,13 @@ import Nimble
 
 class FizzBuzz {
     func calculate(_ value: Int) -> String {
-        if value == 5 {
-            return "Buzz"
-        }
-
         if value % 3 == 0 {
             return "Fizz"
+        } else if value == 5 {
+            return "Buzz"
+        } else {
+            return String(value)
         }
-        return String(value)
     }
 }
 
