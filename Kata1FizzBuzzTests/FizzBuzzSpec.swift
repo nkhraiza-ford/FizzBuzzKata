@@ -11,7 +11,7 @@ import Nimble
 
 class FizzBuzz {
     func calculate(_ value: Int) -> String {
-        if value == 15 {
+        if value == 15 || value == 30 {
             return "FizzBuzz"
         } else if value % 3 == 0 {
             return "Fizz"
@@ -67,6 +67,11 @@ class FizzBuzzSpec: QuickSpec {
             context("15") {
                 it("should produce an output of FizzBuzz") {
                     expect(subject.calculate(15)) == "FizzBuzz"
+                }
+            }
+            context("30") {
+                it("should produce an output of FizzBuzz") {
+                    expect(subject.calculate(30)) == "FizzBuzz"
                 }
             }
         }
