@@ -30,6 +30,8 @@ private extension Int {
     }
 }
 
+
+
 class FizzBuzzSpec: QuickSpec {
     override func spec() {
         var subject: FizzBuzz!
@@ -37,18 +39,26 @@ class FizzBuzzSpec: QuickSpec {
             beforeEach {
                 subject = FizzBuzz()
             }
-            context("Number") {
+            sharedExamples("number") { sharedContext in
                 context("1") {
                     it("should produces output of 1") {
-                        expect(subject.calculate(1)) == "1"
-                    }
-                }
-                context("2") {
-                    it("should produce an output of 2") {
-                        expect(subject.calculate(2)) == "2"
+                        let numbers = sharedContext()["numbers"] as! [Int: String]
+                        numbers.forEach{ number, result  in
+                            expect(subject.calculate(number)) == result
+                        }
                     }
                 }
             }
+            itBehavesLike("number", sharedExampleContext: { () -> [String : Any] in
+                ["numbers": [
+                    1:"1",
+                    2:"2",
+                    4:"4",
+                    7:"7",
+                    29:"29"
+                    ]
+                ]
+            })
             context("Fizz") {
                 context("3") {
                     it("should produce an output of Fizz") {
@@ -73,7 +83,6 @@ class FizzBuzzSpec: QuickSpec {
                     }
                 }
             }
-
             context("FizzBuzz") {
                 context("15") {
                     it("should produce an output of FizzBuzz") {
