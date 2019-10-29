@@ -37,17 +37,19 @@ class FizzBuzzSpec: QuickSpec {
             beforeEach {
                 subject = FizzBuzz()
             }
-            context("1") {
-                it("should produces output of 1") {
-                    expect(subject.calculate(1)) == "1"
+            context("Number") {
+                context("1") {
+                    it("should produces output of 1") {
+                        expect(subject.calculate(1)) == "1"
+                    }
+                }
+                context("2") {
+                    it("should produce an output of 2") {
+                        expect(subject.calculate(2)) == "2"
+                    }
                 }
             }
-            context("2") {
-                it("should produce an output of 2") {
-                    expect(subject.calculate(2)) == "2"
-                }
-            }
-            context("multiples of 3") {
+            context("Fizz") {
                 context("3") {
                     it("should produce an output of Fizz") {
                         expect(subject.calculate(3)) == "Fizz"
@@ -59,7 +61,7 @@ class FizzBuzzSpec: QuickSpec {
                     }
                 }
             }
-            context("multiples of 5") {
+            context("Buzz") {
                 context("5") {
                     it("should produce an output of Buzz") {
                         expect(subject.calculate(5)) == "Buzz"
@@ -72,7 +74,7 @@ class FizzBuzzSpec: QuickSpec {
                 }
             }
 
-            context("multiples of 15") {
+            context("FizzBuzz") {
                 context("15") {
                     it("should produce an output of FizzBuzz") {
                         expect(subject.calculate(15)) == "FizzBuzz"
@@ -84,7 +86,6 @@ class FizzBuzzSpec: QuickSpec {
                     }
                 }
             }
-
         }
     }
 }
