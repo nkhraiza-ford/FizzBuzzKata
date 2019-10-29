@@ -85,18 +85,19 @@ class FizzBuzzSpec: QuickSpec {
                 ["numbers": [5, 10, 20]]
             })
 
-            context("Buzz") {
-                context("5") {
-                    it("should produce an output of Buzz") {
-                        expect(subject.calculate(5)) == "Buzz"
-                    }
-                }
-                context("10") {
-                    it("should produce an output of Buzz") {
-                        expect(subject.calculate(10)) == "Buzz"
+            sharedExamples("FizzBuzz") { sharedContext in
+                it("should produce output of FizzBuzz"){
+                    let numbers = sharedContext()["numbers"] as! [Int]
+                    numbers.forEach { number in
+                        expect(subject.calculate(number)) == "FizzBuzz"
                     }
                 }
             }
+
+            itBehavesLike("FizzBuzz", sharedExampleContext: { () -> [String : Any] in
+                ["numbers": [15, 30, 45, 60]]
+            })
+
             context("FizzBuzz") {
                 context("15") {
                     it("should produce an output of FizzBuzz") {
