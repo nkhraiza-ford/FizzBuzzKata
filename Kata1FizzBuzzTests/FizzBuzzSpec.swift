@@ -72,6 +72,19 @@ class FizzBuzzSpec: QuickSpec {
                 ["numbers": [3, 6, 12, 36, 72, 144]]
             })
 
+            sharedExamples("Buzz") { sharedContext in
+                it("Should produce output of Buzz") {
+                    let numbers = sharedContext()["numbers"] as! [Int]
+                    numbers.forEach{ number in
+                        expect(subject.calculate(number)) == "Buzz"
+                    }
+                }
+            }
+
+            itBehavesLike("Buzz", sharedExampleContext: { () -> [String : Any] in
+                ["numbers": [5, 10, 20]]
+            })
+
             context("Buzz") {
                 context("5") {
                     it("should produce an output of Buzz") {
