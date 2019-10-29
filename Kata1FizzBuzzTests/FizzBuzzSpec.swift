@@ -69,21 +69,9 @@ class FizzBuzzSpec: QuickSpec {
             }
 
             itBehavesLike("Fizz", sharedExampleContext: { () -> [String : Any] in
-                ["numbers": [3, 6, 12]]
+                ["numbers": [3, 6, 12, 36, 72, 144]]
             })
 
-            context("Fizz") {
-                context("3") {
-                    it("should produce an output of Fizz") {
-                        expect(subject.calculate(3)) == "Fizz"
-                    }
-                }
-                context("6") {
-                    it("should produce an output of Fizz") {
-                        expect(subject.calculate(6)) == "Fizz"
-                    }
-                }
-            }
             context("Buzz") {
                 context("5") {
                     it("should produce an output of Buzz") {
